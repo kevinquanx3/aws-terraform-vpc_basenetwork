@@ -1,10 +1,5 @@
-provider "aws" {
-  version = "~> 1.2"
-  region  = "us-west-2"
-}
-
-module "vpc" {
-  source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-vpc_basenetwork//?ref=v0.0.10"
+module "custome_vpc" {
+  source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-vpc_basenetwork//?ref=tf_0.12-upgrade"
 
   vpc_name   = "MyVPC"
   custom_azs = ["us-west-2a", "us-west-2b"]
@@ -15,3 +10,4 @@ module "vpc" {
   private_cidr_ranges    = ["10.0.12.0/22", "10.0.16.0/22"]
   private_subnets_per_az = 1
 }
+

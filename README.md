@@ -6,7 +6,7 @@ This module sets up basic network components for an account in a specific region
 
 ```
 module "vpc" {
- source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-vpc_basenetwork//?ref=v0.0.10"
+ source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-vpc_basenetwork//?ref=tf_0.12-upgrade"
 
  vpc_name = "MyVPC"
 }
