@@ -6,7 +6,7 @@ This module sets up basic network components for an account in a specific region
 
 ```
 module "vpc" {
- source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-vpc_basenetwork//?ref=v0.0.10"
+ source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-vpc_basenetwork//?ref=v0.12.0"
 
  vpc_name = "MyVPC"
 }
@@ -23,6 +23,18 @@ By default only `vpc_name` is required to be set. Unless changed `aws_region` de
 - NAT Gateways will be created in each AZ's first public subnet
 - EIPs will be created in all public subnets for NAT gateways to use
 - Route Tables, including routes to NAT gateways if applicable
+
+## Terraform 0.12 upgrade
+
+Several changes were required while adding terraform 0.12 compatibility.  The following changes should 
+made when upgrading from a previous release to version 0.12.0 or higher.
+
+### Module variables
+
+The following module variables were updated to better meet current Rackspace style guides:
+
+- `custom_tags` -> `tags`
+- `vpc_name` -> `name`
 
 ## Inputs
 
