@@ -30,7 +30,7 @@ locals {
   domain_name = "${var.domain_name == "" ? (data.aws_region.current.name == "us-east-1" ? "ec2.internal" : format("%s.compute.internal", data.aws_region.current.name)) : var.domain_name }"
 
   base_tags = {
-    ServiceProvider = "Rackspace"
+    ServiceProvider = "Sage"
     Environment     = "${var.environment}"
   }
 
@@ -62,7 +62,7 @@ resource aws_vpc_dhcp_options "dhcp_options" {
   domain_name_servers = "${var.domain_name_servers}"
 
   tags {
-    ServiceProvider = "Rackspace"
+    ServiceProvider = "Sage"
     Name            = "${var.vpc_name}-DHCPOptions"
     Environment     = "${var.environment}"
   }
